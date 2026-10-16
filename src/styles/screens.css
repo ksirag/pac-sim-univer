@@ -1,0 +1,462 @@
+/* Оболочка, карта, редактор и экраны. Только токены из tokens.css. */
+
+/* ───────── оболочка ───────── */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 100dvh;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--bg);
+  position: relative;
+}
+.app-banners {
+  flex: none;
+  padding-top: var(--safe-top);
+}
+.app-banners:not(:empty) {
+  padding: calc(var(--safe-top) + var(--space-2)) var(--space-4) 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.app-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+.app-full .app-main {
+  overflow: hidden;
+}
+.boot {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+}
+.boot-error h1 {
+  font-size: var(--fs-xl);
+}
+
+.bottom-nav {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: var(--nav-h);
+  padding-bottom: var(--safe-bottom);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: var(--nav-h);
+  color: var(--muted);
+  text-decoration: none;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+.nav-item[aria-current='page'] {
+  color: var(--brand-strong);
+}
+.nav-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 30px;
+  border-radius: var(--radius-pill);
+}
+.nav-item[aria-current='page'] .nav-icon {
+  background: var(--brand-soft);
+}
+.live-dot {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--run);
+  border: 2px solid var(--surface);
+}
+
+/* ───────── заголовок и тело экрана ───────── */
+.screen-header {
+  flex: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4) var(--space-2);
+}
+.screen-header-title h1 {
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+}
+.screen-header-side.right {
+  display: flex;
+  justify-content: flex-end;
+}
+.screen-body {
+  padding: var(--space-2) var(--space-4) var(--space-6);
+}
+.center-pad {
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+}
+.center {
+  text-align: center;
+}
+.section-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+.sep {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: var(--space-4) 0;
+}
+.plain-list {
+  margin: 0;
+  padding-left: 18px;
+}
+.steps {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: var(--space-3);
+}
+.link-btn {
+  border: 0;
+  background: none;
+  padding: 0 var(--space-1);
+  min-height: 32px;
+  font-weight: 700;
+  color: var(--brand-strong);
+  text-decoration: underline;
+}
+.danger-text {
+  color: var(--danger);
+}
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.input-derived {
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  font-weight: 700;
+  min-height: var(--tap);
+}
+.input-sm {
+  min-height: 44px;
+  padding: 0 var(--space-3);
+}
+.sort {
+  flex: none;
+}
+
+/* ───────── метрики ───────── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+.metric-value {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+.metric-big .metric-value {
+  font-size: var(--fs-2xl);
+}
+.metric-unit {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--muted);
+}
+.metric-label {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.metric-grid-live .metric-big .metric-value {
+  font-size: 2.25rem;
+}
+
+/* ───────── живая симуляция ───────── */
+.live-map {
+  position: relative;
+  flex: 1 1 40%;
+  min-height: 200px;
+  background: var(--map-bg);
+}
+.live-map .map-wrap {
+  position: absolute;
+  inset: 0;
+}
+.no-map {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--muted);
+}
+.live-status {
+  position: absolute;
+  top: calc(var(--safe-top) + var(--space-3));
+  left: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+  z-index: 500;
+}
+.live-panel {
+  flex: none;
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 16px rgba(10, 30, 22, 0.12);
+  display: grid;
+  gap: var(--space-2);
+}
+.live-actions {
+  margin-top: var(--space-2);
+}
+.live-actions .btn {
+  flex: 1;
+}
+.summary-map {
+  height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: var(--map-bg);
+}
+.summary-map .map-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+/* ───────── история ───────── */
+.mode-dot {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+}
+.mode-dot.run {
+  background: var(--run-soft);
+  color: var(--run);
+}
+.bars {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  height: 110px;
+}
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-height: 0;
+}
+.bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  background: var(--surface-2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bar {
+  width: 100%;
+  background: var(--brand);
+  border-radius: 8px 8px 0 0;
+}
+.bar-label {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+/* ───────── карта ───────── */
+.map-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  background: var(--map-bg);
+}
+.map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.leaflet-container {
+  font-family: var(--font);
+  background: var(--map-bg);
+}
+.leaflet-control-attribution {
+  font-size: 11px;
+  max-width: 70vw;
+}
+.map-notice {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: 28px;
+  z-index: 600;
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  font-size: var(--fs-sm);
+}
+.map-controls {
+  position: absolute;
+  right: var(--space-3);
+  top: calc(var(--safe-top) + var(--space-3));
+  z-index: 600;
+  display: grid;
+  gap: var(--space-2);
+}
+.pin {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+.pin-start { background: #0b7a57; }
+.pin-end { background: #1f2937; }
+.pin-point { background: #0b7a57; border-width: 2px; }
+.pin-selected { background: #f5a524; color: #1f1400; border-color: #1f2937; }
+.pin-pos { background: #bf3f0b; box-shadow: 0 0 0 6px rgba(191, 63, 11, 0.25), 0 1px 4px rgba(0, 0, 0, 0.45); }
+
+/* ───────── миниатюры маршрутов ───────── */
+.thumb { flex: none; }
+.thumb-bg { fill: var(--brand-soft); }
+.thumb-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.thumb-line.brand { stroke: var(--brand); }
+.thumb-line.run { stroke: var(--run); }
+
+/* ───────── редактор маршрута ───────── */
+.editor {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.editor-map {
+  position: absolute;
+  inset: 0;
+  bottom: 0;
+}
+.editor-map .map-controls {
+  top: calc(var(--safe-top) + 72px);
+}
+.editor-top {
+  position: relative;
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: calc(var(--safe-top) + var(--space-2)) var(--space-3) 0;
+  pointer-events: none;
+}
+.editor-top > * {
+  pointer-events: auto;
+}
+.editor-chip {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  box-shadow: var(--shadow-1);
+  font-size: var(--fs-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.editor-banner {
+  position: relative;
+  z-index: 700;
+  padding: var(--space-2) var(--space-3) 0;
+}
+.editor-panel {
+  position: relative;
+  z-index: 700;
+  margin-top: auto;
+  padding: var(--space-3) var(--space-4) calc(var(--safe-bottom) + var(--space-3));
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 16px rgba(10, 30, 22, 0.14);
+  display: grid;
+  gap: var(--space-2);
+}
+.editor-hint {
+  min-height: 2.6em;
+}
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  overflow-x: auto;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+.chip.on {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  color: var(--brand-strong);
+}
+.tool-points .leaflet-container { cursor: crosshair; }
+.tool-draw .leaflet-container { cursor: crosshair; touch-action: none; }

@@ -1,0 +1,125 @@
+/* Дизайн-токены Pacer Simulator. Все цвета, отступы и размеры — только отсюда. */
+:root {
+  color-scheme: light;
+
+  /* цвет */
+  --bg: #f2f6f4;
+  --surface: #ffffff;
+  --surface-2: #e8efec;
+  --surface-3: #dbe5e1;
+  --ink: #0e1a16;
+  --ink-2: #33433d;
+  --muted: #52625b;
+  --line: #d3ddd8;
+  --brand: #0b7a57;
+  --brand-strong: #075a40;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcf2e8;
+  --run: #bf3f0b;
+  --run-soft: #fde9db;
+  --run-ink: #ffffff;
+  --accent: #f5a524;
+  --warn-bg: #fff3d1;
+  --warn-ink: #6a4400;
+  --danger: #b42318;
+  --danger-soft: #fde7e4;
+  --danger-ink: #ffffff;
+  --info-bg: #e3eefb;
+  --info-ink: #17407a;
+  --overlay: rgba(8, 18, 14, 0.5);
+  --shadow-1: 0 1px 2px rgba(10, 30, 22, 0.08), 0 2px 8px rgba(10, 30, 22, 0.06);
+  --shadow-2: 0 8px 28px rgba(10, 30, 22, 0.18);
+  --map-bg: #dde6e2;
+
+  /* типографика */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-metric: 3.25rem;
+
+  /* геометрия */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 28px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --tap: 48px;
+  --nav-h: 64px;
+
+  /* безопасные области iPhone */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a110f;
+    --surface: #121c18;
+    --surface-2: #1b2823;
+    --surface-3: #25362f;
+    --ink: #eaf3ef;
+    --ink-2: #c5d3cd;
+    --muted: #9bb0a8;
+    --line: #26372f;
+    --brand: #3fdc98;
+    --brand-strong: #7ae9b8;
+    --brand-ink: #04281b;
+    --brand-soft: #12372a;
+    --run: #ff8d52;
+    --run-soft: #3a2316;
+    --run-ink: #2a1103;
+    --warn-bg: #3b2f10;
+    --warn-ink: #ffd88a;
+    --danger: #ff7a6e;
+    --danger-soft: #3d1b18;
+    --danger-ink: #2a0906;
+    --info-bg: #16283f;
+    --info-ink: #a9cbff;
+    --overlay: rgba(0, 0, 0, 0.62);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 8px 28px rgba(0, 0, 0, 0.6);
+    --map-bg: #16211d;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a110f;
+  --surface: #121c18;
+  --surface-2: #1b2823;
+  --surface-3: #25362f;
+  --ink: #eaf3ef;
+  --ink-2: #c5d3cd;
+  --muted: #9bb0a8;
+  --line: #26372f;
+  --brand: #3fdc98;
+  --brand-strong: #7ae9b8;
+  --brand-ink: #04281b;
+  --brand-soft: #12372a;
+  --run: #ff8d52;
+  --run-soft: #3a2316;
+  --run-ink: #2a1103;
+  --warn-bg: #3b2f10;
+  --warn-ink: #ffd88a;
+  --danger: #ff7a6e;
+  --danger-soft: #3d1b18;
+  --danger-ink: #2a0906;
+  --info-bg: #16283f;
+  --info-ink: #a9cbff;
+  --overlay: rgba(0, 0, 0, 0.62);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 8px 28px rgba(0, 0, 0, 0.6);
+  --map-bg: #16211d;
+}

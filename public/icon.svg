@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pacer Simulator">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12a574"/>
+      <stop offset="1" stop-color="#075a40"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M112 372 C 168 372 168 268 236 268 S 312 332 372 232 S 392 168 400 150" fill="none" stroke="#ffffff" stroke-opacity=".38" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 372 C 168 372 168 268 236 268 S 312 332 372 232" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="372" cy="232" r="38" fill="#ffb020" stroke="#ffffff" stroke-width="14"/>
+  <circle cx="112" cy="372" r="20" fill="#ffffff"/>
+</svg>
